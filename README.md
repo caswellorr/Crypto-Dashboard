@@ -18,11 +18,11 @@ The API fetches data from Poloniex to be displayed on a candlestick graph.
 
 * When first opening the dashboard, it should look like this:
 
-  ![alt text](./assets/img/opening.png)
+  ![landing page](./img/opening.png)
   
 * After searching a coin, the dashboard should display a graph like this:
 
-  ![alt text](./assets/img/graph.png)
+  ![graph](./img/graph.png)
   
 
 ## Takeaways 💡
