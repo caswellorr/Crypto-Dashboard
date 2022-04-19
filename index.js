@@ -1,43 +1,43 @@
-// ============ Global Variables for newsApi ===========
-let newsApi = '7043854dc0f449fd9386019e6c883fb4'
-let newsCategory = "bitcoin"
-let newsUrl = `https://newsapi.org/v2/everything?q=${newsCategory}&apikey=${newsApi}`
-let newsImage = document.getElementById('newsImage')
-let newsImage1 = document.getElementById('newsImage1')
+// // ============ Global Variables for newsApi ===========
+// let newsApi = '7043854dc0f449fd9386019e6c883fb4'
+// let newsCategory = "bitcoin"
+// let newsUrl = `https://newsapi.org/v2/everything?q=${newsCategory}&apikey=${newsApi}`
+// let newsImage = document.getElementById('newsImage')
+// let newsImage1 = document.getElementById('newsImage1')
 
 
-// ============ Get newsApi Function =============
-function getNews() {
-  fetch(newsUrl).then((response)=>{
-      return response.json()
-  })
-      .then((news)=>{
+// // ============ Get newsApi Function =============
+// function getNews() {
+//   fetch(newsUrl).then((response)=>{
+//       return response.json()
+//   })
+//       .then((news)=>{
 
-          let sliceNews = news.articles.slice(-2);
+//           let sliceNews = news.articles.slice(-2);
            
-          for(let i=0; i < sliceNews.length; i++){
+//           for(let i=0; i < sliceNews.length; i++){
 
-              console.log(news.articles[i].title)
-              console.log(news.articles[i].description)
-              console.log(news.articles[i].url)
+//               console.log(news.articles[i].title)
+//               console.log(news.articles[i].description)
+//               console.log(news.articles[i].url)
 
-               newsImage.src = news.articles[2].urlToImage
-               newsImage1.src = news.articles[4].urlToImage
+//                newsImage.src = news.articles[2].urlToImage
+//                newsImage1.src = news.articles[4].urlToImage
 
-               document.querySelector('#newsTitle').insertAdjacentHTML("beforebegin", news.articles[i].title)
-               document.querySelector('#newsTitle1').insertAdjacentHTML("beforebegin", news.articles[2].title)
-               document.querySelector('#newsArticle').insertAdjacentHTML("beforebegin", news.articles[i].description)
-               document.querySelector('#newsArticle1').insertAdjacentHTML("beforebegin", news.articles[4].title)
-               document.getElementById('newsCard').onclick = function changeContent() {
-               document.getElementById('newsCard').url =   window.location.href=news.articles[2].url;
-               }
-               document.getElementById('newsCard1').onclick = function changeContent() {
-               document.getElementById('newsCard1').url =   window.location.href=news.articles[4].url; 
-        }};
-      })
-}
+//                document.querySelector('#newsTitle').insertAdjacentHTML("beforebegin", news.articles[i].title)
+//                document.querySelector('#newsTitle1').insertAdjacentHTML("beforebegin", news.articles[2].title)
+//                document.querySelector('#newsArticle').insertAdjacentHTML("beforebegin", news.articles[i].description)
+//                document.querySelector('#newsArticle1').insertAdjacentHTML("beforebegin", news.articles[4].title)
+//                document.getElementById('newsCard').onclick = function changeContent() {
+//                document.getElementById('newsCard').url =   window.location.href=news.articles[2].url;
+//                }
+//                document.getElementById('newsCard1').onclick = function changeContent() {
+//                document.getElementById('newsCard1').url =   window.location.href=news.articles[4].url; 
+//         }};
+//       })
+// }
 
-getNews();
+// getNews();
 
 
 
